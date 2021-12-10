@@ -45,6 +45,18 @@
             justify-content: center;
             align-items: center;
         }
+        .underGame{
+            width: 300px;
+            height: 50px;
+            background-color: black;
+            border: 1px solid rgb(204, 145, 7);
+            box-sizing: border-box;
+            font-size: 25px;
+            color: rgb(204, 145, 7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -62,8 +74,8 @@
             <div class="box" id="8"></div>
         </div>
         <button id="button">Reset</button>
-        <div id="screen"></div>
-        <div id="playerwins"></div>
+        <div id="screen" class="underGame"></div>
+        <div id="playerwins" class="underGame"></div>
     </div>
     <script>
         let xx = [0];
@@ -106,11 +118,11 @@
             for(let x = 0;x<winner.length;x++){
                 if( document.getElementById(winner[x][0]).innerHTML === "X" && document.getElementById(winner[x][1]).innerHTML === "X" && document.getElementById(winner[x][2]).innerHTML === "X" ){
                     document.getElementById("screen").innerHTML = "X wins";
-                    checkPiece = 0;
+                    checkPiece = 1;
                 }
                 if( document.getElementById(winner[x][0]).innerHTML === "O" && document.getElementById(winner[x][1]).innerHTML === "O" && document.getElementById(winner[x][2]).innerHTML === "O" ){
                     document.getElementById("screen").innerHTML = "O wins";
-                    checkPiece = 0;
+                    checkPiece = 1;
                 }
             }
             for(let y = 0; y < document.querySelectorAll(".box").length;y++){
